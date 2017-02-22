@@ -3284,7 +3284,7 @@ new Vue({
 /* 11 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: ModuleBuildError: Module build failed: Error: ENOENT: no such file or directory, open 'D:\\laragon\\www\\laravel54\\resources\\assets\\sass\\app.scss'\n    at Error (native)\n    at D:\\laragon\\www\\laravel54\\node_modules\\webpack\\lib\\NormalModule.js:141:35\n    at D:\\laragon\\www\\laravel54\\node_modules\\loader-runner\\lib\\LoaderRunner.js:364:11\n    at D:\\laragon\\www\\laravel54\\node_modules\\loader-runner\\lib\\LoaderRunner.js:200:19\n    at D:\\laragon\\www\\laravel54\\node_modules\\enhanced-resolve\\lib\\CachedInputFileSystem.js:62:14\n    at _combinedTickCallback (internal/process/next_tick.js:67:7)\n    at process._tickCallback (internal/process/next_tick.js:98:9)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 12 */
