@@ -1,21 +1,39 @@
 <template>
-  <div class="container">
-    <article class="message">
-      <div class="message-header">
-        <p>Homepage</p>
-        <button class="delete"></button>
-      </div>
-      <div class="message-body">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
-      </div>
+    <div class="container">
+    <article class="message is-primary" v-for="status in statuses">
+        <div class="message-header">
+            <p>
+                {{ status.user.name }}
+            </p>
+            <p>
+                {{ postedOn(status) }}
+            </p>
+        </div>
+
+        <div class="message-body" v-text="status.body"></div>
     </article>
-  </div>
+    </div>
 </template>
 
 <script>
+    import moment from 'moment';
+    import Status from '../models/Status';
+
     export default {
-        mounted() {
-            console.log('Component mounted.')
+        data() {
+            return {
+                statuses: [],
+            }
+        },
+
+        methods: {
+            postedOn(status) {
+                return moment(status.created_at).fromNow();
+            }
+        },
+
+        created() {
+            Status.all(statuses => this.statuses = statuses);
         }
     }
 </script>
